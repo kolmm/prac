@@ -388,23 +388,25 @@ nav {
   width: 71%;
   height: 100%;
   border: none;
+  outline: none;
+  padding-left: 2%;
   box-shadow: -5px 0.3px 20px 0 rgba(68, 89, 123, 0.1);
 }
 .chat-left::-webkit-input-placeholder {
   padding-top: 6%;
-  padding-left: 8%;
+  padding-left: 6%;
 }
 .chat-left:-ms-input-placeholder {
   padding-top: 6%;
-  padding-left: 8%;
+  padding-left: 6%;
 }
 .chat-left::-ms-input-placeholder {
   padding-top: 6%;
-  padding-left: 8%;
+  padding-left: 6%;
 }
 .chat-left::placeholder {
   padding-top: 6%;
-  padding-left: 8%;
+  padding-left: 6%;
 }
 .chat-right {
   position: relative;
