@@ -83,7 +83,7 @@ gulp.task("clean", function() {
   return del("build");
 });
 
-gulp.task('build', ['clean', 'images', 'style'], function() {
+gulp.task('build', ['clean', 'images', 'style', "nunjucks"], function() {
 
     var buildCss = gulp.src([ // Переносим библиотеки в продакшен
         'src/css/*.css',
