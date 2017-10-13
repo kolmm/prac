@@ -1,0 +1,38 @@
+{% extends "./layout/main.njk" %}
+
+{% set title = 'Service' %}
+{% set page = 'service' %}
+{% set services = [
+  {src: "img/responsive.png", tagline: "Responsive Design", desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit,sunt in culpa qui officia deserun"},
+  {src: "img/web.png", tagline: "Web / apps Design", desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit,sunt in culpa qui officia deserun"},
+  {src: "img/ppdesign.png", tagline: "Pixel Perfect Design", desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit,sunt in culpa qui officia deserun"},
+  {src: "img/organized.png", tagline: "Organized project", desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit,sunt in culpa qui officia deserun"},
+  {src: "img/24hour.png", tagline: "24  Hour support", desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit,sunt in culpa qui officia deserun"},
+  {src: "img/upd.png", tagline: "Daily Social update", desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit,sunt in culpa qui officia deserun"},
+  {src: "img/ppdesign.png", tagline: "Pixel Perfect Design", desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit,sunt in culpa qui officia deserun"},
+  {src: "img/organized.png", tagline: "Pixel Perfect Design", desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit,sunt in culpa qui officia deserun"}
+] %}
+
+
+{% block content %}
+  <div class="main-service">
+    <div class="tagline h1">
+      <span class="h1--black">W</span>orld famous Branding Company
+      <br>
+      Used to <span class="h1--black">work</span> with us.
+    </div>
+    <div class="container-service-wrap">
+      {% for service in services %}
+      <div class="service-container">
+        <img src=" {{ service.src}} " alt="">
+        <div class="service-container-tagline h2--center">
+          {{ service.tagline }}
+        </div>
+        <div class="service-container-desc h5--center">
+          {{ service.desc }}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

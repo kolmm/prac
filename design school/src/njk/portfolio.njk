@@ -1,0 +1,36 @@
+{% extends "./layout/main.njk" %}
+
+{% set title = 'Portfolio' %}
+{% set page = 'portfolio' %}
+{% set containers = [
+    { titleBold: 'Mind Trackers.', title: 'ios App.', description: 'App Development', src: 'img/mind.png'},
+    { titleBold: 'Insane web.', title: 'web concept.', description: 'App Development', src: 'img/2.png'},
+    { titleBold: 'New Nokia.', title: 'andro App.', description: 'App Development', src: 'img/3.png'},
+    { titleBold: 'Mind Trackers.', title: 'ios App.', description: 'App Development', src: 'img/4.png'},
+    { titleBold: 'Mind Trackers.', title: 'ios App.', description: 'App Development', src: 'img/5.png'},
+    { titleBold: 'Insane web.', title: 'web concept.', description: 'App Development', src: 'img/6.png'},
+    { titleBold: 'New Nokia.', title: 'andro App.', description: 'App Development', src: 'img/7.png'},
+    { titleBold: 'Mind Trackers.', title: 'ios App.', description: 'App Development', src: 'img/8.png'}
+] %}
+
+{% block content %}
+  <div class="main-portfolio">
+    <div class="tagline h1">We Build <span class="h1--black">apps</span> & <span class="h1--black">Websites.</span></div>
+    <div class="cont-portfolio">
+      {% for container in containers %}
+      <div class="container-portfolio">
+        <img class="img-portfolio" src="{{ container.src }}" alt="">
+        <div class="info-portfolio">
+          <span class="h4-bold">{{ container.titleBold }}</span>
+          <span class="h4">{{ container.title }}</span>
+          <br>
+          <span class="h5">{{ container.description }}</span>
+        </div>
+        <a class="container-arrow-link" href="#">
+          <img class="container-arrow" src="img/arrow.png" alt="">
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

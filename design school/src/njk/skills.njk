@@ -1,0 +1,74 @@
+{% extends "./layout/main.njk" %}
+
+{% set title = 'Skills' %}
+{% set page = 'skills' %}
+{% set skills = [
+  {wide: false, src: "img/brand.png", tagline: "Branding identity", desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit"},
+  {wide: false, src: "img/promo.png", tagline: "Promotion", desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit"},
+  {wide: true},
+  {review: true},
+  {wide: false, src: "img/graphic.png", tagline: "Graphic Design", desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit"},
+  {wide: false, src: "img/wp.png", tagline: "Wordpress theme", desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit"}
+] %}
+{% set bigimgs = [
+  {src: "img/shopify.png"},
+  {src: "img/instapage.png"},
+  {src: "img/airbnb.png"},
+  {src: "img/onedrive.png"},
+  {src: "img/googledrive.png"},
+  {src: "img/evernote.png"}
+] %}
+
+{% block content %}
+<div class="skills-main">
+  <div class="tagline h1">
+    <span class="h1--black">W</span>e have some awesome skills to work on your project.
+    <br>
+    100% satisfiction Guarantee.
+  </div>
+  <div class="skills-container-wrap">
+    {% for skill in skills %}
+    {% if skill.wide == true %}
+    <div class="skills-bigContainer">
+      {% for bigimg in bigimgs %}
+      <img src="{{ bigimg.src }}" alt="">
+      {% endfor %}
+    </div>
+    {% else %} {% if skill.review == true %}
+    <div class="skills-review">
+      <div class="skills-review-main">
+        <div class="triangle-down"></div>
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipisicupidatat non proident, suns modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+        </div>
+      </div>
+      <div class="review-person">
+        <img src="img/review-person.png" alt="">
+        <div class="review-text">
+          <span class="h2 review-text-tagline">John Smith</span>
+          <br>
+          <span class="review-text-desc">
+            art director of pixxy
+          </span>
+        </div>
+      </div>
+    </div>
+    {% else %}
+    <div class="skills-container">
+      <img src="{{ skill.src }}" alt="">
+      <div class="skills-container-tagline h2--center">
+        {{ skill.tagline }}
+      </div>
+      <div class="skills-container-desc h5--center">
+        {{ skill.desc }}
+      </div>
+      <div class="skills-container-more">
+        Read more
+      </div>
+    </div>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

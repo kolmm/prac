@@ -1,0 +1,37 @@
+{% set navs = [
+    { title: 'Home', url: 'index.html', state: 'home' },
+    { title: 'Portfolio', url: 'portfolio.html', state: 'portfolio' },
+    { title: 'Service', url: 'service.html', state: 'service' },
+    { title: 'Skills', url: 'skills.html', state: 'skills' },
+    { title: 'Contact', url: 'contact.html', state: 'contact' }
+] %}
+
+<div class="header-wrap">
+  <div class="person">
+    <img class="person-photo" src="img/face.jpg"><br>
+    <span class="person-name h2">Mohammad Shohag</span>
+    <br>
+    <span class="person-proff h2">UI/UX Designer</span>
+  </div>
+  <nav>
+    <ul class="nav-items">
+      {% for nav in navs %}
+        {% if page == nav.state %}
+        <li class="nav-item h2 active">
+        {% else %}
+        <li class="nav-item h2">
+        {% endif %}
+          <a href="{{ nav.url }}">
+            {{ nav.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <div class="soc">
+      <img src="img/google.png" alt="">
+      <img src="img/fb.png" alt="">
+      <img src="img/rd.png" alt="">
+      <img src="img/be.png" alt="">
+  </div>
+</div>
